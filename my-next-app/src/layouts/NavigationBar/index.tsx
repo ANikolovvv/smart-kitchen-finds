@@ -1,26 +1,37 @@
 import React from "react";
-import { categories } from "./pageNames";
-import {Link} from "@nextui-org/react";
+import { pageNames } from "./pageNames";
 import Box from "@/components/atoms/Box";
+import { useRouter } from "next/router";
+import PageItem from "../molecules/PageItem";
 
 const NavigationBar: React.FC = () => {
-  return (
-    <nav className="bg-white border-b border-gray-200">
-      <div className="container mx-auto flex justify-between items-center p-4">
-        <Box className="text-2xl font-bold text-orange-500">SmartifyTech</Box>
+  const router = useRouter();
 
-        <div className="hidden sm:flex space-x-4">
-          {categories.map((category) => (
-            <Link
-              key={category.name}
-              href={category.href}
-              className="text-gray-700 hover:text-orange-500 transition-colors"
-            >
-              {category.name}
-            </Link>
-          ))}
-        </div>
-      </div>
+  const pageItems = pageNames.map((page) => {
+    const isActive = page.url === router.pathname;
+
+    return (
+      <PageItem
+        key={page.url}
+        label={page.name}
+        isActive={isActive}
+        aria-label={`${page.name} Page`}
+        redirectUrl={page.url}
+      />
+    );
+  });
+  return (
+    <nav className="bg-amber-50 border-b border-white-400">
+      <Box className="container mx-auto flex justify-between items-center gap-2 p-4">
+        {/* Лого, което променя размера на текста според екрана */}
+        <Box className="text-xl md:text-2xl lg:text-3xl font-bold text-orange-500">
+          SmartifyTech
+        </Box>
+
+        <Box className="hidden md:flex flex-wrap space-x-4 lg:space-x-6">
+          {pageItems}
+        </Box>
+      </Box>
     </nav>
   );
 };
