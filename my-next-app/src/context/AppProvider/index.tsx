@@ -17,7 +17,7 @@ const AppProvider: FC<Props> = ({ children }) => {
           rel="apple-touch-icon"
           sizes="180x180"
         />
-        <link color="#365DC7" href="/safari-pinned-tab.svg" rel="icon" />
+        <link color="#365DC7" href="/" rel="icon" />
         <meta content="#ffffff" name="msapplication-TileColor" />
         <meta content="#ffffff" name="theme-color"></meta>
         <meta charSet="utf-8" />
