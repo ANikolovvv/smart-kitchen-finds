@@ -28,7 +28,7 @@ const NavigationBar: React.FC = () => {
           SmartifyTech
         </Box>
 
-        <Box className="hidden md:flex flex-wrap space-x-4 lg:space-x-6">
+        <Box className="hidden md:flex space-x-4 lg:space-x-6">
           {pageItems}
         </Box>
       </Box>
