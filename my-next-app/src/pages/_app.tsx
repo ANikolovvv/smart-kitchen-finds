@@ -1,20 +1,22 @@
-import { NextUIProvider } from "@nextui-org/react";
+import GeneralLayout from "@/layouts/GeneralLayout";
 import "../../public/styles/NextUi.css";
+
+import AppProvider from "@/context/AppProvider";
+import { NextUIProvider } from "@nextui-org/react";
+
 import type { AppProps } from "next/app";
 import React from "react";
-import AppProvider from "@/context/AppProvider";
-import NavigationBar from "@/layouts/NavigationBar";
+
+
 
 export default function App({ Component, pageProps }: AppProps) {
+  const layout = Component || ((page: any) => page);
   const AnyComponent = Component as any;
 
   return (
     <NextUIProvider>
       <AppProvider>
-        <NavigationBar />
-        <main className="bg-orange-400 text-gray-800 flex h-screen w-full">
-          <AnyComponent {...pageProps} />
-        </main>
+        {<GeneralLayout><AnyComponent {...pageProps} /></GeneralLayout>}
       </AppProvider>
     </NextUIProvider>
   );

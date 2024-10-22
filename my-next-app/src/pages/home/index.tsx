@@ -1,12 +1,11 @@
-import Box from "@/components/atoms/Box";
-import React, { FC } from "react";
+import GeneralLayout from "@/layouts/GeneralLayout";
+import HomePage from "../../features/home";
+import withLayout from "@/helpers/withLayout";
 
-const Home: FC = () => {
-  return (
-    <Box className="h-full w-full max-h-screen ">
-      <h1>Gollllllllll</h1>
-    </Box>
-  );
+const Home = () => {
+  return <HomePage />;
 };
+
+Home.layout =withLayout (GeneralLayout);
 
 export default Home;

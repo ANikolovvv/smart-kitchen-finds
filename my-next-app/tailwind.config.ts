@@ -12,7 +12,11 @@ const config: Config = {
   // darkMode: 'class',
   plugins: [nextui()],
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        'custom': '0 4px 20px rgba(255, 165, 0, 0.5)', // Customize as needed
+      },
+    },
   },
 };
 export default config;

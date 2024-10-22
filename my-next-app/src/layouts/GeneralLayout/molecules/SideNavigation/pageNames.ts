@@ -1,26 +1,30 @@
 export const pageNames = [
     {
-        name: 'Smart Home',
+        label: 'Smart Home',
         url: '/home'
     },
     {
-        name: 'Speakers',
+        label: 'Speakers',
         url: '/speakers'
     },
     {
-        name: 'Lighting',
+        label: 'Lighting',
         url: '/lighting'
     },
     {
-        name: 'Thermostats',
+        label: 'Thermostats',
         url: '/thermostats'
     },
     {
-        name: 'Cameras',
+        label: 'Cameras',
         url: '/cameras'
     },
     {
-        name: 'Locks & Security',
+        label: 'Locks & Security',
         url: '/locks-security'
+    },
+    {
+        label: 'Blog',
+        url: '/Blog'
     },
 ];

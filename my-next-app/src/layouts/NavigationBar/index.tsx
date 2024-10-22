@@ -1,21 +1,24 @@
 import React from "react";
-import { pageNames } from "./pageNames";
+import { pageNames } from "../GeneralLayout/molecules/SideNavigation/pageNames";
 import Box from "@/components/atoms/Box";
 import { useRouter } from "next/router";
-import PageItem from "../molecules/PageItem";
+import PageItem from "../GeneralLayout/molecules/PageItem";
+import { icons } from "../GeneralLayout/molecules/SideNavigation/iconMap";
 
 const NavigationBar: React.FC = () => {
   const router = useRouter();
 
   const pageItems = pageNames.map((page) => {
     const isActive = page.url === router.pathname;
+    const icon = icons[page.label];
 
     return (
       <PageItem
         key={page.url}
-        label={page.name}
+        label={page.label}
         isActive={isActive}
-        aria-label={`${page.name} Page`}
+        icon={icon}
+        aria-label={`${page.label} Page`}
         redirectUrl={page.url}
       />
     );
@@ -28,9 +31,7 @@ const NavigationBar: React.FC = () => {
           SmartifyTech
         </Box>
 
-        <Box className="hidden md:flex space-x-4 lg:space-x-6">
-          {pageItems}
-        </Box>
+        <Box className="hidden md:flex space-x-4 lg:space-x-6">{pageItems}</Box>
       </Box>
     </nav>
   );

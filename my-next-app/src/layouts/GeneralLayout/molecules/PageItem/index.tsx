@@ -4,11 +4,12 @@ import Box from "@/components/atoms/Box";
 
 type Props = {
   label: string;
+  icon: ReactNode;
   isActive: boolean;
   redirectUrl: string;
 };
 
-const PageItem: FC<Props> = ({ label, isActive, redirectUrl }) => {
+const PageItem: FC<Props> = ({ label, isActive, icon, redirectUrl }) => {
   const router = useRouter();
 
   const hoverColor = isActive ? "" : "hover:bg-orange-100";
@@ -21,16 +22,12 @@ const PageItem: FC<Props> = ({ label, isActive, redirectUrl }) => {
 
   return (
     <Box
-      onClick={navigateToPage}
-      className={`flex items-center gap-2 text-left cursor-pointer mb-1 p-3 rounded-md 
-    ${hoverColor} ${textColor} ${backgroundColor} 
-    transition-colors duration-300 ease-in-out hover:shadow-lg 
-    sm:text-sm md:text-base lg:text-lg xl:text-xl 
-    sm:p-2 md:p-3 lg:p-4 
-    sm:gap-2 md:gap-4 lg:gap-6`}
-    >
-      {label}
-    </Box>
+    onClick={navigateToPage}
+    className={`w-full flex items-center gap-3 text-left cursor-pointer mb-2 ${hoverColor} ${textColor} p-3 rounded-md ${backgroundColor}`}
+  >
+    {icon}
+    {label}
+  </Box>
   );
 };
 
