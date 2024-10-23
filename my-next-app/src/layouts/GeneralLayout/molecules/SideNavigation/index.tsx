@@ -1,17 +1,13 @@
 import React, { FC, memo } from "react";
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  Divider,
-  useDisclosure,
-} from "@nextui-org/react";
+import { Card, CardBody, CardHeader } from "@nextui-org/react";
 import { useRouter } from "next/router";
 
 import Box from "@/components/atoms/Box";
 import { pageNames } from "./pageNames";
 import { icons } from "./iconMap";
 import PageItem from "../PageItem";
+
+import SearchInput from "@/components/atoms/SearchInput";
 
 const SideNavigation: FC = () => {
   const router = useRouter();
@@ -33,11 +29,14 @@ const SideNavigation: FC = () => {
   });
 
   return (
-    <Card className="h-full px-4 shadow-custom">
-      <CardHeader className="items-center justify-center text-orange-500 font-bold">
+    <Card
+      className=" h-full px-4 flex justify-items-start"
+      style={{ boxShadow: "0 4px 20px rgba(255, 165, 0, 0.5)" }}
+    >
+      <CardHeader className="text-lg text-orange-500 font-bold">
         SmartifyTech
       </CardHeader>
-      <Divider className="bg-black shadow-custom"/>
+      <SearchInput />
       <CardBody className="w-full mt-5 justify-between">
         <Box className="gap-4">{pageItems}</Box>
       </CardBody>

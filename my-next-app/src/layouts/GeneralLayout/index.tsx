@@ -8,7 +8,7 @@ type Props = {
 
 const GeneralLayout: FC<Props> = ({ children }) => {
   return (
-    <Box className="flex h-screen w-full ">
+    <Box className="flex h-screen w-full">
       <Box className="w-1/5 p-3">
         <SideNavigation />
       </Box>

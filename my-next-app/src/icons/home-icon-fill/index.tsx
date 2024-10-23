@@ -5,7 +5,7 @@ type Props = {
   size?: number;
 };
 
-const HomeIconFill: FC<Props> = ({ color = "currentColor", size = 24 }) => {
+const HomeIconFill: FC<Props> = ({ color = "#FFD700", size = 24 }) => {
   return (
     <svg viewBox="0 0 24 24" fill={color} height={size} width={size}>
       <path fill="none" d="M0 0h24v24H0z" />
