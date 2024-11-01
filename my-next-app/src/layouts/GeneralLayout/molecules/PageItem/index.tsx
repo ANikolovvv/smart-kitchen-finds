@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, memo } from "react";
+import React, { FC, ReactNode, memo, useCallback } from "react";
 import { useRouter } from "next/router";
 import Box from "@/components/atoms/Box";
 
@@ -19,22 +19,41 @@ const PageItem: FC<Props> = ({
 }) => {
   const router = useRouter();
 
-  const hoverColor = isActive ? "" : "hover:bg-orange-100";
-  const backgroundColor = isActive ? "bg-orange-500" : "";
-  const textColor = isActive ? "text-white" : "text-gray-500";
-  const navigateToPage = () => {
+  const navigateToPage = useCallback(() => {
     router.push(redirectUrl);
-  };
+  }, [router, redirectUrl]);
 
   return (
     <Box
       onClick={navigateToPage}
-      className={`w-full flex items-center gap-2 text-left cursor-pointer mb-2 
-                p-2 rounded-md shadow-sm shadow-orange-500 text-sm sm:text-base 
-                ${hoverColor} ${textColor} ${backgroundColor} `}
+      className={`relative w-full flex items-center p-2 mb-2 text-left cursor-pointer 
+                  rounded-md shadow-sm shadow-orange-500 text-sm sm:text-base 
+                  ${
+                    isActive
+                      ? "bg-orange-500 text-white"
+                      : "hover:bg-orange-100 text-gray-500"
+                  }`}
+      style={{
+        height: "40px",
+      }}
     >
       {icon}
-      {!isCollapsed && label}
+
+      {!isCollapsed && (
+        <span
+          className={`absolute transition-opacity duration-300 ${
+            isCollapsed ? "opacity-0" : "opacity-100"
+          }`}
+          style={{
+            left: "50%",
+            transform: "translateX(-50%)", // Центриране на текста
+            whiteSpace: "nowrap", // Предотвратява пренасяне на нов ред
+            visibility: isCollapsed ? "hidden" : "visible",
+          }}
+        >
+          {label}
+        </span>
+      )}
     </Box>
   );
 };
