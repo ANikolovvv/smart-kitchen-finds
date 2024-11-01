@@ -7,9 +7,16 @@ type Props = {
   icon: ReactNode;
   isActive: boolean;
   redirectUrl: string;
+  isCollapsed: boolean;
 };
 
-const PageItem: FC<Props> = ({ label, isActive, icon, redirectUrl }) => {
+const PageItem: FC<Props> = ({
+  label,
+  isActive,
+  icon,
+  redirectUrl,
+  isCollapsed,
+}) => {
   const router = useRouter();
 
   const hoverColor = isActive ? "" : "hover:bg-orange-100";
@@ -22,10 +29,12 @@ const PageItem: FC<Props> = ({ label, isActive, icon, redirectUrl }) => {
   return (
     <Box
       onClick={navigateToPage}
-      className={`w-full flex items-center gap-2 text-left cursor-pointer mb-2 ${hoverColor} ${textColor} p-2 rounded-md ${backgroundColor} shadow-sm shadow-orange-500`}
+      className={`w-full flex items-center gap-2 text-left cursor-pointer mb-2 
+                p-2 rounded-md shadow-sm shadow-orange-500 text-sm sm:text-base 
+                ${hoverColor} ${textColor} ${backgroundColor} `}
     >
       {icon}
-      {label}
+      {!isCollapsed && label}
     </Box>
   );
 };
