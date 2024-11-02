@@ -25,6 +25,6 @@ export const pageNames = [
     },
     {
         label: 'Blog',
-        url: '/Blog'
+        url: '/blog'
     },
 ];

@@ -1,22 +1,25 @@
-import React, { FC, memo } from "react";
+import React, { FC, memo, useEffect, useState } from "react";
 import { Input } from "@nextui-org/react";
 import { SearchIcon } from "@/icons/search-icon";
 import Box from "../Box";
 
 type SearchProps = {
-  isCollapsed: boolean; // пропс, който определя дали е „collapsed“
+  isCollapsed: boolean; 
 };
 
 const SearchInput: FC<SearchProps> = ({ isCollapsed }) => {
+  const [isPlaceholderVisible, setIsPlaceholderVisible] = useState(false);
+
   const styles = {
-    label: "text-black",
+    label: "text-gray-500",
     input: [
       "bg-transparent",
       "text-black",
       "text-sm",
       "sm:text-base",
-      "placeholder:text-black",
+      "placeholder:text-gray-500",
       "rounded-md",
+      "text-center",
     ],
     innerWrapper: "bg-transparent",
     inputWrapper: [
@@ -31,11 +34,23 @@ const SearchInput: FC<SearchProps> = ({ isCollapsed }) => {
     ],
   };
 
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+    if (!isCollapsed) {
+      timeout = setTimeout(() => {
+        setIsPlaceholderVisible(true);
+      }, 300);
+    } else {
+      setIsPlaceholderVisible(false);
+    }
+    return () => clearTimeout(timeout);
+  }, [isCollapsed]);
+
   return (
     <Box className="flex w-full items-center p-3 gap-2 bg-white">
       <Input
         classNames={styles}
-        placeholder={isCollapsed ? "" : "Type to search..."}
+        placeholder={isPlaceholderVisible ? "Type to search..." : ""}
         size="sm"
         startContent={
           <Box className="rounded-md flex justify-center items-center h-full">
@@ -49,3 +64,4 @@ const SearchInput: FC<SearchProps> = ({ isCollapsed }) => {
 };
 
 export default memo(SearchInput);
+

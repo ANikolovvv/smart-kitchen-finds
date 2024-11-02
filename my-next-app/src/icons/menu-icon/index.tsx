@@ -4,21 +4,33 @@ type Props = {
   color?: string;
   size?: number;
   className?: string;
-  onClick?: () => void; // Добавяне на onClick като опционален пропс
+  onClick?: () => void;
 };
 
-const MenuIcon: FC<Props> = ({ color = "#FFD700", size = 24, className = "", onClick }) => {
+const MenuIcon: FC<Props> = ({
+  color = "#FFD700",
+  size = 24,
+  className = "",
+  onClick,
+}) => {
   return (
     <svg
       className={`cursor-pointer ${className}`}
-      viewBox="0 0 24 24"
+      viewBox="0 0 512 512"
       fill={color}
       height={size}
       width={size}
-      onClick={onClick} // Използване на onClick пропс
+      onClick={onClick}
     >
-      <path fill="none" d="M0 0h24v24H0z" />
-      <path d="M21 20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.49a1 1 0 01.386-.79l8-6.222a1 1 0 011.228 0l8 6.222a1 1 0 01.386.79V20z" />
+      <path fill="none" d="M0 0h512v512H0z" />
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeMiterlimit={10}
+        strokeWidth={48}
+        d="M88 152h336M88 256h336M88 360h336"
+      />
     </svg>
   );
 };

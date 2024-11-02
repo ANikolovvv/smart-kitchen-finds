@@ -17,11 +17,13 @@ const GeneralLayout: FC<Props> = ({ children }) => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
         setIsCollapsed(false);
+      } else {
+        setIsCollapsed(true);
       }
     };
 
     window.addEventListener("resize", handleResize);
-   
+
     handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
@@ -33,7 +35,7 @@ const GeneralLayout: FC<Props> = ({ children }) => {
         className={`p-2 transition-all duration-100 ${
           isCollapsed
             ? "w-[120px]"
-            : "w-full sm:w-1/4 md:w-1/3 lg:w-2/5 xl:w-1/4"
+            : "w-full sm:w-full md:w-1/3 lg:w-2/5 xl:w-1/4"
         }`}
       >
         <SideNavigation

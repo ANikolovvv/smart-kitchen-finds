@@ -18,15 +18,15 @@ const PageItem: FC<Props> = ({ label, isActive, icon, redirectUrl, isCollapsed }
     router.push(redirectUrl);
   }, [router, redirectUrl]);
 
-  // Управляваме видимостта на текста с кратко закъснение
+  
   useEffect(() => {
     let timeout: NodeJS.Timeout;
     if (!isCollapsed) {
-      timeout = setTimeout(() => setIsLabelVisible(true), 300); // Закъснение за плавност
+      timeout = setTimeout(() => setIsLabelVisible(true), 300); 
     } else {
       setIsLabelVisible(false);
     }
-    return () => clearTimeout(timeout); // Почистваме таймера
+    return () => clearTimeout(timeout); 
   }, [isCollapsed]);
 
   return (
@@ -39,10 +39,8 @@ const PageItem: FC<Props> = ({ label, isActive, icon, redirectUrl, isCollapsed }
         height: "40px",
       }}
     >
-      {/* Винаги видима икона */}
       {icon}
 
-      {/* Плавно показване на етикета с отложено появяване */}
       <span
         className={`absolute transition-opacity duration-300 ${
           isLabelVisible ? "opacity-100" : "opacity-0"
