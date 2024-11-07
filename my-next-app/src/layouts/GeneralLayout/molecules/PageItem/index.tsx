@@ -36,7 +36,7 @@ const PageItem: FC<Props> = ({ label, isActive, icon, redirectUrl, isCollapsed }
                   rounded-md shadow-sm shadow-orange-500 text-sm sm:text-base 
                   ${isActive ? "bg-orange-500 text-white" : "hover:bg-orange-100 text-gray-500"}`}
       style={{
-        height: "40px",
+        height: "35px",
       }}
     >
       {icon}

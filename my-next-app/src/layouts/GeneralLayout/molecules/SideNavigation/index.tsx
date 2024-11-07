@@ -40,7 +40,7 @@ const SideNavigation: FC<SideNavigationProps> = ({
 
   return (
     <Card
-      className="h-full w-full px-5 flex flex-col justify-items-start rounded-xl"
+      className=" w-full justify-center  px-6 flex flex-col justify-items-start rounded-xl"
       style={{ boxShadow: "0 4px 20px rgba(255, 165, 0, 0.5)" }}
     >
       <CardHeader
@@ -53,7 +53,7 @@ const SideNavigation: FC<SideNavigationProps> = ({
       </CardHeader>
 
       <SearchInput isCollapsed={isCollapsed} />
-      <CardBody className="w-full mt-5 flex-grow justify-between overflow-hidden">
+      <CardBody className="w-full mt-5  justify-between overflow-hidden">
         <Box className="flex flex-col gap-2 w-full">{pageItems}</Box>
       </CardBody>
     </Card>
