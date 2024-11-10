@@ -30,7 +30,7 @@ const SearchInput: FC<SearchProps> = ({ isCollapsed }) => {
       "focus-within:bg-orange-100",
       "!cursor-text",
       "rounded-md",
-      "h-10",
+      "h-9",
     ],
   };
 
