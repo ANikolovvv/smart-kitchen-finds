@@ -4,10 +4,7 @@
 
 html,
 body {
-
   margin: 0;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden; 
 }
-@media (max-width: 768px) {
-  
-}
+
