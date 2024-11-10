@@ -33,15 +33,15 @@ const GeneralLayout: FC<Props> = ({ children }) => {
   return (
     <Box className="flex flex-col min-h-screen w-full">
       <Box
-        className={`flex flex-grow justify-center  relative ${
+        className={`flex flex-grow justify-center relative${
           !isCollapsed ? "felx-col" : ""
         }`}
       >
         <Box
           className={`flex justify-center p-2 transition-all duration-100 h-full  ${
             isCollapsed
-              ? "w-[120px] sm:w-[120px] sm:top-0 sm:left-0 "
-              : "w-full   sm:top-0 sm:left-0 sm:w-full bg-white sm:z-40"
+              ? "w-[120px] sm:top-0 sm:left-0 "
+              : "w-full absolute z-40 sm:absolute sm:top-0 sm:left-0 sm:w-full sm:z-40 md:relative lg:relative xl:relative bg-white"
           } ${!isCollapsed ? "  md:w-1/3 lg:w-2/5 xl:w-1/4" : ""}`}
         >
           <SideNavigation
