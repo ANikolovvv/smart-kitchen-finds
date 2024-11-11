@@ -6,18 +6,40 @@ type ProductCardProps = {
   title: string;
   description: string;
   link: string;
+  imageUrl: string; // Added image URL prop for product image
 };
 
-const ProductCard: FC<ProductCardProps> = ({ title, description, link }) => (
-  <Card className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 2xl:w-1/6 p-2 m-1 shadow-lg transition-transform transform hover:scale-105">
-    <CardHeader className="font-bold text-lg">{title}</CardHeader>
-    <CardBody>
-      <p className="text-sm mb-2">{description}</p>
+const ProductCard: FC<ProductCardProps> = ({ title, description, link, imageUrl }) => (
+  <Card
+    className="w-full justify-center h-auto items-center p-4 m-2 shadow-lg transition-transform transform hover:scale-105 rounded-xl"
+    style={{
+      backgroundColor: "rgba(0, 0, 0, 0.5)",
+    }}
+  >
+    {/* Product Image */}
+    <img 
+      src={imageUrl} 
+      alt={title} 
+      className="w-full h-48 object-cover rounded-t-xl mb-4" 
+    />
+    
+    {/* Product Title */}
+    <CardHeader className="text-center justify-center  text-orange-500 font-bold text-base sm:text-lg md:text-xl lg:text-2xl">
+      {title}
+    </CardHeader>
+
+    <CardBody className="flex flex-col text-white items-center justify-center">
+      {/* Product Description */}
+      <p className="text-xs sm:text-sm md:text-base lg:text-lg text-center text-amber-100 font-bold mb-2">
+        {description}
+      </p>
+      
+      {/* Product Link */}
       <Link
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-blue-500 hover:underline"
+        className="text-amber-200 font-bold hover:text-amber-300 text-xs sm:text-sm md:text-base lg:text-lg"
       >
         Explore our {title}.
       </Link>
@@ -26,4 +48,5 @@ const ProductCard: FC<ProductCardProps> = ({ title, description, link }) => (
 );
 
 export default ProductCard;
+
 
