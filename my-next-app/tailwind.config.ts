@@ -16,6 +16,9 @@ const config: Config = {
       boxShadow: {
         'custom': '0 4px 20px rgba(255, 165, 0, 0.5)', // Customize as needed
       },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
     },
   },
 };
