@@ -17,6 +17,7 @@ const AppProvider: FC<Props> = ({ children }) => {
           rel="apple-touch-icon"
           sizes="180x180"
         />
+
         <link color="#365DC7" href="/" rel="icon" />
         <meta content="#ffffff" name="msapplication-TileColor" />
         <meta content="#ffffff" name="theme-color"></meta>
