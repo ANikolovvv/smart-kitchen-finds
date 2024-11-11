@@ -6,26 +6,21 @@ import { featuredProducts } from "./featuredProducts";
 const HomePage: FC = () => {
   return (
     <Box
-      className="flex-grow w-full p-4 rounded-lg shadow-lg"
+      className="flex w-full font-serif p-4 rounded-lg shadow-lg"
       style={{
-        backgroundImage:
-          "url('https://alnasser.solutions/wp-content/uploads/2024/08/Smart-lighting.jpeg')",
+        backgroundImage: "url('/images/home-image.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        borderRadius: "16px", // заоблени ъгли
-        boxShadow: "0 4px 20px rgba(255, 165, 0, 0.5)",
+        borderRadius: "12px", // Updated border radius for consistent styling
+        boxShadow: "0 2px 15px rgba(255, 165, 0, 0.5)",
       }}
     >
-      <Box className="max-w-4xl mx-auto text-center p-6">
-        <h1 className="text-2xl md:text-3xl font-bold mb-4">
+      <Box className="max-w-4xl mx-auto text-center p-4 sm:p-6 md:p-8">
+        <h1 className="text-lg  sm:text-2xl md:text-3xl lg:text-4xl text-orange-500 font-bold mb-4">
           Discover Smart Home Devices
         </h1>
-        <p className="mb-6 text-gray-700">
-          Explore top-rated smart devices to elevate your home’s connectivity
-          and convenience.
-        </p>
-        <Box className="flex flex-wrap justify-center gap-2">
+        <Box className="flex flex-col items-center justify-center gap-4 md:gap-6">
           {featuredProducts.map((product) => (
             <ProductCard key={product.title} {...product} />
           ))}
