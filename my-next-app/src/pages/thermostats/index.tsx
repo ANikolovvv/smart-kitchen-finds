@@ -1,9 +1,17 @@
 import Box from "@/components/atoms/Box";
+import PageWrapper from "@/components/atoms/PageWrapper";
+import Title from "@/components/atoms/Title";
 import React, { FC } from "react";
 
-
 const Thermostats: FC = () => {
-  return <Box className="h-full w-full max-h-screen "><h1>Thermostats</h1></Box>;
+  return (
+    <PageWrapper>
+      <Title>
+        Climate Control at Your Fingertips: Smart Thermostats for Ultimate
+        Comfort
+      </Title>
+    </PageWrapper>
+  );
 };
 
-export default Thermostats
+export default Thermostats;

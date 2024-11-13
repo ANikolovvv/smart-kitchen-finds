@@ -1,9 +1,14 @@
 import Box from "@/components/atoms/Box";
+import PageWrapper from "@/components/atoms/PageWrapper";
+import Title from "@/components/atoms/Title";
 import React, { FC } from "react";
 
-
 const Speakers: FC = () => {
-  return <Box className="h-full w-full max-h-screen "><h1>Speakerssss</h1></Box>;
+  return (
+    <PageWrapper>
+      <Title>Talk to the Future: Top Smart Speakers for Your Home</Title>
+    </PageWrapper>
+  );
 };
 
-export default Speakers
+export default Speakers;

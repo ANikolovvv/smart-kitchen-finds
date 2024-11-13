@@ -1,9 +1,14 @@
 import Box from "@/components/atoms/Box";
+import PageWrapper from "@/components/atoms/PageWrapper";
+import Title from "@/components/atoms/Title";
 import React, { FC } from "react";
 
-
 const Blog: FC = () => {
-  return <Box className="h-full w-full max-h-screen "><h1>b;og</h1></Box>;
+  return (
+    <PageWrapper>
+      <Title>The Smart Life Blog: Expert Advice and Smart Home Hacks</Title>
+    </PageWrapper>
+  );
 };
 
-export default Blog
+export default Blog;
