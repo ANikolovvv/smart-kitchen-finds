@@ -26,7 +26,7 @@ export const featuredProducts = [
   {
     title: "Smart Camera",
     description: "Monitor your home remotely with real-time video.",
-    imageUrl: "/images/home-image.jpg",
+    imageUrl: "https://img.freepik.com/free-vector/internet-things-isometric-website_107791-1338.jpg?t=st=1731521378~exp=1731524978~hmac=8a6d56d35ad94a807b343bf42ac955ddb52e19b37b9d9f605",
     link: "/cameras",
   },
   {
