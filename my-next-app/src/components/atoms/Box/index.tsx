@@ -3,7 +3,7 @@ import React, { FC, HTMLAttributes, memo } from "react";
 type ContainerProps = HTMLAttributes<HTMLDivElement>;
 
 export type BoxProps = ContainerProps & {
-  as?: React.ElementType;
+  as?: React.ElementType; 
   children?: React.ReactNode;
   href?: string;
   htmlFor?: string;
@@ -13,6 +13,9 @@ export type BoxProps = ContainerProps & {
   target?: string;
   type?: string;
   value?: string | number | readonly string[] | undefined;
+  role?: string;
+  "aria-labelledby"?: string;
+  "aria-label"?: string;
 };
 
 const Box: FC<BoxProps> = ({
