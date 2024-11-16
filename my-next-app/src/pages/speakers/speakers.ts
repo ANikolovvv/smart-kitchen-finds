@@ -1,4 +1,4 @@
-const speakers = [
+export const speakers = [
     {
         "name": "Smart Speakers Product 1",
         "image": "https://example.com/images/smart speakers_product_1.jpg",

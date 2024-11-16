@@ -1,4 +1,4 @@
-const locksAndSecurity =[
+export const locksAndSecurity =[
     {
         "name": "Locks & Security Product 1",
         "image": "https://example.com/images/locks & security_product_1.jpg",
