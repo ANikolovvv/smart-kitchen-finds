@@ -37,7 +37,7 @@
     },
     {
         "name": "Lighting Product 7",
-        "image": "https://img.freepik.com/free-vector/internet-things-isometric-website_107791-1338.jpg?t=st=1731521378~exp=1731524978~hmac=8a6d56d35ad94a807b343bf42ac955ddb52e19b37b9d9f605",
+        "image": "",
         "price": 37.91,
         "description": "Example description for Lighting Product 7. High-quality, innovative design for all your needs."
     },
@@ -55,7 +55,7 @@
     },
     {
         "name": "Lighting Product 10",
-        "image": "https://img.freepik.com/free-vector/internet-things-isometric-website_107791-1338.jpg?t=st=1731521378~exp=1731524978~hmac=8a6d56d35ad94a807b343bf42ac955ddb52e19b37b9d9f605",
+        "image": "",
         "price": 323.32,
         "description": "Example description for Lighting Product 10. High-quality, innovative design for all your needs."
     },
@@ -71,12 +71,7 @@
         "price": 165.67,
         "description": "Example description for Lighting Product 12. High-quality, innovative design for all your needs."
     },
-    {
-        "name": "Lighting Product 13",
-        "image": "https://img.freepik.com/free-vector/internet-things-isometric-website_107791-1338.jpg?t=st=1731521378~exp=1731524978~hmac=8a6d56d35ad94a807b343bf42ac955ddb52e19b37b9d9f605",
-        "price": 376.44,
-        "description": "Example description for Lighting Product 13. High-quality, innovative design for all your needs."
-    },
+   
     {
         "name": "Lighting Product 14",
         "image": "/images/home-image.jpg",
@@ -107,15 +102,10 @@
         "price": 42.8,
         "description": "Example description for Lighting Product 18. High-quality, innovative design for all your needs."
     },
-    {
-        "name": "Lighting Product 19",
-        "image": "https://img.freepik.com/free-vector/internet-things-isometric-website_107791-1338.jpg?t=st=1731521378~exp=1731524978~hmac=8a6d56d35ad94a807b343bf42ac955ddb52e19b37b9d9f605",
-        "price": 386.83,
-        "description": "Example description for Lighting Product 19. High-quality, innovative design for all your needs."
-    },
+   
     {
         "name": "Lighting Product 20",
-        "image": "https://img.freepik.com/free-vector/internet-things-isometric-website_107791-1338.jpg?t=st=1731521378~exp=1731524978~hmac=8a6d56d35ad94a807b343bf42ac955ddb52e19b37b9d9f605",
+        "image": "",
         "price": 156.41,
         "description": "Example description for Lighting Product 20. High-quality, innovative design for all your needs."
     }
