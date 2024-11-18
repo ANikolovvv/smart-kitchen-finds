@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <NextUIProvider>
       <AppProvider>
-        {<GeneralLayout><AnyComponent {...pageProps} /></GeneralLayout>}
+        <GeneralLayout><AnyComponent {...pageProps} /></GeneralLayout>
       </AppProvider>
     </NextUIProvider>
   );
