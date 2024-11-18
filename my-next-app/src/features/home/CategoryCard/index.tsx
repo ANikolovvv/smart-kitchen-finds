@@ -38,6 +38,7 @@ const CategoryCard: FC<CategoryCardProps> = ({ title, description, link, imageUr
         className="w-full h-48 object-cover rounded-t-xl mb-4"
       />
 
+      {/* Текстовите елементи с насложен клас */}
       <span className="bg-red-500 text-white text-xs font-bold uppercase px-2 py-1 rounded-full mb-2">
         Best Seller
       </span>
@@ -53,8 +54,6 @@ const CategoryCard: FC<CategoryCardProps> = ({ title, description, link, imageUr
 
         <Link
           href={link}
-          target="_blank"
-          rel="noopener noreferrer"
           className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mt-2 inline-block"
         >
           Explore our {title}
