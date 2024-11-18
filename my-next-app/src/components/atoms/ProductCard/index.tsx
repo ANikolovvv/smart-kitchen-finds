@@ -48,16 +48,15 @@ const ProductCard: FC<ProductCardProps> = ({
             ${price.toFixed(2)}
           </p>
         </Box>
-        <Link href={affiliateLink} passHref>
-          <Button
-            as="a"
-            target="_blank"
-            rel="noopener noreferrer"
+        <Box>
+          <Link
+            href={affiliateLink}
+            passHref
             className="text-xs font-medium bg-yellow-500 hover:bg-yellow-600 text-black px-3 py-1 rounded-full"
           >
             Buy from Amazon
-          </Button>
-        </Link>
+          </Link>
+        </Box>
       </CardFooter>
     </Card>
   );
