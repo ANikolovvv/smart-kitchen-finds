@@ -31,14 +31,14 @@ const GeneralLayout: FC<Props> = ({ children }) => {
   }, []);
 
   return (
-    <Box className="flex flex-col min-h-screen w-full font-serif">
+    <Box className="flex flex-col  min-h-screen w-full font-serif">
       <Box
-        className={`flex flex-grow justify-center relative${
+        className={`flex flex-grow gap-4 justify-center relative${
           !isCollapsed ? "felx-col" : ""
         }`}
       >
         <Box
-          className={`flex justify-center p-2 transition-all duration-100 h-full  ${
+          className={`flex justify-center mt-2 rounded-xl transition-all duration-100 h-full  ${
             isCollapsed
               ? "w-[120px] sm:top-0 sm:left-0 "
               : "w-full absolute z-40 sm:absolute sm:top-0 sm:left-0 sm:w-full sm:z-40 md:relative lg:relative xl:relative bg-white"

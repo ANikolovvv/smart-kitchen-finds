@@ -4,20 +4,21 @@ import { SearchIcon } from "@/icons/search-icon";
 import Box from "../Box";
 
 type SearchProps = {
-  isCollapsed: boolean; 
+  isCollapsed: boolean;
+  isDark?: boolean;
 };
 
-const SearchInput: FC<SearchProps> = ({ isCollapsed }) => {
+const SearchInput: FC<SearchProps> = ({ isCollapsed, isDark = false }) => {
   const [isPlaceholderVisible, setIsPlaceholderVisible] = useState(false);
 
   const styles = {
-    label: "text-gray-500",
+    label: isDark ? "text-gray-400" : "text-gray-500",
     input: [
       "bg-transparent",
-      "text-black",
+      isDark ? "text-white" : "text-black",
       "text-sm",
       "sm:text-base",
-      "placeholder:text-gray-500",
+      isDark ? "placeholder:text-gray-400" : "placeholder:text-gray-500",
       "rounded-md",
       "text-center",
     ],
@@ -25,9 +26,9 @@ const SearchInput: FC<SearchProps> = ({ isCollapsed }) => {
     inputWrapper: [
       "shadow-sm",
       "shadow-orange-500",
-      "bg-white",
-      "hover:bg-orange-100",
-      "focus-within:bg-orange-100",
+      isDark ? "bg-[rgb(18,18,18)]" : "bg-white",
+      isDark ? "hover:bg-gray-800" : "hover:bg-orange-100",
+      isDark ? "focus-within:bg-gray-800" : "focus-within:bg-orange-100",
       "!cursor-text",
       "rounded-md",
       "h-9",
@@ -47,7 +48,7 @@ const SearchInput: FC<SearchProps> = ({ isCollapsed }) => {
   }, [isCollapsed]);
 
   return (
-    <Box className="flex w-full items-center p-3 gap-2 bg-white">
+    <Box className={`flex w-full items-center p-3 gap-2 ${isDark ? 'bg-[rgb(18,18,18)]' : 'bg-white'}`}>
       <Input
         classNames={styles}
         placeholder={isPlaceholderVisible ? "Type to search..." : ""}

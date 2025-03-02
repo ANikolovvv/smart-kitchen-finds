@@ -1,22 +1,27 @@
 import { FC, memo, ReactNode } from "react";
 import Box from "../Box";
+import { useTheme } from 'next-themes';
 
 type PageWrapperProps = {
   children: ReactNode;
-  backgroundImage?: string; 
+   
 };
 
-const PageWrapper: FC<PageWrapperProps> = ({ children, backgroundImage }) => {
+const PageWrapper: FC<PageWrapperProps> = ({ children}) => {
+  const { theme } = useTheme();
+
   return (
     <Box
       className="flex w-full font-serif p-4 rounded-lg shadow-lg"
       style={{
-        backgroundImage: backgroundImage ? `url('${backgroundImage}')` : undefined,
+        
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         borderRadius: "12px",
-        boxShadow: "0 2px 15px rgba(255, 165, 0, 0.5)",
+        boxShadow: theme === 'dark' 
+          ? "0 2px 15px rgba(255, 255, 255, 0.5)"
+          : "0 2px 15px rgba(255, 165, 0, 0.5)",
       }}
     >
       <Box
