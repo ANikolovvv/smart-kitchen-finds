@@ -33,18 +33,19 @@ const PageItem: FC<Props> = ({ label, isActive, icon, redirectUrl, isCollapsed }
     <Box
       onClick={navigateToPage}
       className={`relative w-full flex items-center p-2 mb-2 text-left cursor-pointer 
-                  rounded-md shadow-sm shadow-orange-500 text-sm sm:text-base 
+                  rounded-md shadow-sm shadow-orange-500
+                  text-xs sm:text-sm md:text-base
+                  h-[35px] md:h-[40px] lg:h-[45px]
                   ${isActive ? "bg-orange-500 text-white" : "hover:bg-orange-100 text-gray-500"}`}
-      style={{
-        height: "35px",
-      }}
     >
-      {icon}
+      <div className="text-lg sm:text-xl md:text-2xl">
+        {icon}
+      </div>
 
       <span
-        className={`absolute transition-opacity duration-300 ${
-          isLabelVisible ? "opacity-100" : "opacity-0"
-        }`}
+        className={`absolute transition-opacity duration-300
+                    text-xs sm:text-sm md:text-base lg:text-lg
+                    ${isLabelVisible ? "opacity-100" : "opacity-0"}`}
         style={{
           left: "50%",
           transform: "translateX(-50%)",
