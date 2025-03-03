@@ -33,17 +33,7 @@ const ProductCard: FC<ProductCardProps> = ({
         </h2>
       </CardHeader>
       <Box className="relative w-full h-64 md:h-[300px]">
-        {/* <Image
-          alt={`Image of ${name}`}
-          className="z-0 object-cover"
-          src={image}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          priority={false}
-          onError={(e) => {
-            e.currentTarget.src = '/fallback-image.jpg'
-          }}
-        /> */}
+      
       </Box>
       <CardFooter className="absolute bg-white/70  bottom-0 border-t border-gray-200 z-10 justify-between px-4 py-3 flex items-center">
         <Box className="flex flex-col">
